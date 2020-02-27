@@ -54,8 +54,8 @@ contract LeadToken is ERC20Interface, Owned {
         decimals = 18;
         _totalSupply = 1000000000000000000000000000;
         
-        balances[0xEF263326533E2803e56148a5A8857817e9dE7e6F] = _totalSupply;
-        emit Transfer(address(0), 0xEF263326533E2803e56148a5A8857817e9dE7e6F, _totalSupply);
+        balances[msg.sender] = _totalSupply;
+        emit Transfer(address(0), msg.sender, _totalSupply);
     }
     
     // Generates a public event on the blockchain that will notify clients
